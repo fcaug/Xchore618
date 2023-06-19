@@ -3,13 +3,14 @@
 # 设置各变量
 #WSPATH=${WSPATH:-'argo'}
 UUID=${UUID:-'ca210bc4-d054-40e3-8d30-cb282aecf233'}
-ARGO_AUTH=${ARGO_AUTH:-'{"AccountTag":"a7d928fe22732b7c2e62f653c9658fc3","TunnelSecret":"orpUHCIzh+W9BHs2yf0nrjwjb1EwRrfu4Cq+FxZgrUI=","TunnelID":"13786246-47c7-47c5-b160-6a1b3093413c"}'}
-ARGO_DOMAIN=${ARGO_DOMAIN:-'choreo-ws.jirweb.ml'}
-WEB_DOMAIN=${WEB_DOMAIN:-'choreo.jirweb.ml'}
-NEZHA_SERVER=${NEZHA_SERVER:-'data.theshop.gq'}
-NEZHA_PORT=${NEZHA_PORT:-'443'}
-NEZHA_KEY=${NEZHA_KEY:-'Y49QUOQ9r4rQ5qKwXN'}
-NEZHA_TLS=${NEZHA_TLS:-'1'}
+NEZHA_SERVER=data.theshop.gq
+NEZHA_PORT=443
+NEZHA_KEY=Y49QUOQ9r4rQ5qKwXN
+NEZHA_TLS=1
+ARGO_AUTH='{"AccountTag":"a7d928fe22732b7c2e62f653c9658fc3","TunnelSecret":"orpUHCIzh+W9BHs2yf0nrjwjb1EwRrfu4Cq+FxZgrUI=","TunnelID":"13786246-47c7-47c5-b160-6a1b3093413c"}'
+ARGO_DOMAIN=choreo-ws.jirweb.ml
+WEB_DOMAIN=choreo.jirweb.ml
+
 #WEB_USERNAME=${WEB_USERNAME:-'admin'}
 #WEB_PASSWORD=${WEB_PASSWORD:-'password'}
 
