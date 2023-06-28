@@ -7,9 +7,9 @@ NEZHA_SERVER=data.theshop.gq
 NEZHA_PORT=443
 NEZHA_KEY=Y49QUOQ9r4rQ5qKwXN
 NEZHA_TLS=1
-ARGO_AUTH='{"AccountTag":"a7d928fe22732b7c2e62f653c9658fc3","TunnelSecret":"orpUHCIzh+W9BHs2yf0nrjwjb1EwRrfu4Cq+FxZgrUI=","TunnelID":"13786246-47c7-47c5-b160-6a1b3093413c"}'
-ARGO_DOMAIN=choreo-ws.jirweb.ml
-WEB_DOMAIN=choreo.jirweb.ml
+ARGO_AUTH=''
+ARGO_DOMAIN=
+WEB_DOMAIN=
 
 #WEB_USERNAME=${WEB_USERNAME:-'admin'}
 #WEB_PASSWORD=${WEB_PASSWORD:-'password'}
