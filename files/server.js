@@ -1,5 +1,5 @@
-﻿const server = "127.0.0.1";
-const port = 3000;
+const url = `https://${process.env.WEB_DOMAIN}`;
+const port = process.env.PORT || 3000;
 const express = require("express");
 const app = express();
 var exec = require("child_process").exec;
