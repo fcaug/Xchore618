@@ -10,9 +10,18 @@ var fs = require("fs");
 var path = require("path");
 const auth = require("basic-auth");
 
-//首页显示内容
 app.get("/", function (req, res) {
   res.send("hello world");
+});
+
+// 页面访问密码
+app.use((req, res, next) => {
+  const user = auth(req);
+  if (user && user.name === username && user.pass === password) {
+    return next();
+  }
+  res.set("WWW-Authenticate", 'Basic realm="Node"');
+  return res.status(401).send();
 });
 
 //获取系统进程表
@@ -27,32 +36,6 @@ app.get("/status", function (req, res) {
   });
 });
 
-//启动web
-app.get("/start", function (req, res) {
-  let cmdStr = "[ -e entrypoint.sh ] && bash entrypoint.sh; chmod +x ./web.js && ./web.js -c ./config.json >/dev/null 2>&1 &";
-  exec(cmdStr, function (err, stdout, stderr) {
-    if (err) {
-      res.send("Web 执行错误：" + err);
-    }
-    else {
-      res.send("Web 执行结果：" + "启动成功!");
-    }
-  });
-});
-
-//启动哪吒
-app.get("/nezha", function (req, res) {
-  let cmdStr = "bash nezha.sh >/dev/null 2>&1 &";
-  exec(cmdStr, function (err, stdout, stderr) {
-    if (err) {
-      res.send("哪吒部署错误：" + err);
-    }
-    else {
-      res.send("哪吒执行结果：" + "启动成功!");
-    }
-  });
-});
-
 //获取系统监听端口
 app.get("/listen", function (req, res) {
     let cmdStr = "ss -nltp";
@@ -61,6 +44,19 @@ app.get("/listen", function (req, res) {
         res.type("html").send("<pre>命令行执行错误：\n" + err + "</pre>");
       } else {
         res.type("html").send("<pre>获取系统监听端口：\n" + stdout + "</pre>");
+      }
+    });
+  });
+
+//获取节点数据
+app.get("/list", function (req, res) {
+    let cmdStr = "bash /tmp/argo.sh";
+    exec(cmdStr, function (err, stdout, stderr) {
+      if (err) {
+        res.type("html").send("<pre>命令行执行错误：\n" + err + "</pre>");
+      }
+      else {
+        res.type("html").send("<pre>节点数据：\n\n" + stdout + "</pre>");
       }
     });
   });
