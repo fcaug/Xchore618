@@ -2,9 +2,11 @@ FROM node:latest
 
 EXPOSE 3000
 
-WORKDIR /dashboard
+WORKDIR /home/choreouser
 
-COPY entrypoint.sh /dashboard/
+COPY entrypoint.sh /home/choreouser/
+
+ENV PM2_HOME=/tmp
 
 RUN npm i -g @3kmfi6hp/nodejs-proxy
 
